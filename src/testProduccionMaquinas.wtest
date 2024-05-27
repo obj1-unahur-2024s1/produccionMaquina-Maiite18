@@ -1,0 +1,27 @@
+import registroProduccion.*
+
+test "testX" {
+
+	registroProduccion.registrarCantidad(43)
+	registroProduccion.registrarCantidad(18)
+	registroProduccion.registrarCantidad(49)
+	registroProduccion.registrarCantidad(62)
+	registroProduccion.registrarCantidad(33)
+	registroProduccion.registrarCantidad(39)
+
+
+
+
+	assert.that(registroProduccion.algunDiaSeProdujo(49))
+	assert.that(not registroProduccion.algunDiaSeProdujo(52))
+	assert.that(registroProduccion.maximoValorDeProduccion() == 62)
+	assert.that(registroProduccion.valoresDeProduccionPares() == [18,62])
+	assert.that(registroProduccion.produccionEsAcotada(10,100))
+	assert.that(not registroProduccion.produccionEsAcotada(20,100))
+	assert.that(registroProduccion.produccionesSuperioresA(35) == [43,49,62,39])
+	assert.that(registroProduccion.produccionesSumando(5) == [48,23,54,67,38,44])
+	assert.that(registroProduccion.totalProducido() == 244)
+	assert.that(registroProduccion.ultimoValorDeProduccion() == 39)
+	assert.that(registroProduccion.cantidadProduccionesMayorALaPrimera() == 2)
+
+}
